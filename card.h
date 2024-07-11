@@ -1,6 +1,7 @@
 #pragma once 
 #include <iostream>
 #include <array>
+#include <optional>
 
 enum Suit {
   club, 
@@ -70,15 +71,15 @@ class CombinedHand {
   CombinedHand(Hand hand, Table table);  
   BestHand get_best_hand(Hand hand); 
 
-  bool isRoyalFlush(); 
-  bool isStraightFlush(); 
-  bool isFourOfAKind(); 
-  bool isFullHouse(); 
-  bool isFlush(); 
-  bool isStraight(); 
-  bool isThreeOfAKind(); 
-  bool isTwoPair(); 
-  bool isPair(); 
+  std::optional<BestHand> isRoyalFlush(); 
+  std::optional<BestHand> isStraightFlush(); 
+  std::optional<BestHand> isFourOfAKind(); 
+  std::optional<BestHand> isFullHouse(); 
+  std::optional<BestHand> isFlush(); 
+  std::optional<BestHand> isStraight(); 
+  std::optional<BestHand> isThreeOfAKind(); 
+  std::optional<BestHand> isTwoPair(); 
+  std::optional<BestHand> isPair(); 
 }; 
 
 std::ostream& operator<< (std::ostream& os, const enum Suit& suit); 
